@@ -28,6 +28,15 @@
   color: #61dafb;
 }
 
+.App-contentDetail{
+  border: 2px outset;
+  border-radius: 12px;
+  margin: 2px 50px 2px 100px;
+  padding: 10px;
+  text-shadow: 1px 1px grey;
+  text-transform: capitalize;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
