@@ -2,6 +2,7 @@ import React from 'react';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 import './App.css';
+import StatBox from './StatBox';
 
 const url = 'https://api.thevirustracker.com/free-api?countryTotals=ALL';
 const defaultCountry = 'IN';
@@ -34,7 +35,6 @@ class App extends React.Component {
   onSelectCountry = (value) => {
      this.setState({selectedCountry: value});
   }
-  prettify = (name) => (name.split('_').join(' '));
   render() {
     const {selectedCountry, allData, loading, success} = this.state;
     return (
@@ -52,12 +52,8 @@ class App extends React.Component {
                   countries={Object.keys(allData)}
                   defaultCountry={selectedCountry}
                 />
-                {Object.keys(allData[selectedCountry]).filter(key => key !== 'title').map((key) => {
-                  return (<div key={key}>
-                    <br/>
-                    <div className="App-contentDetail">{this.prettify(key)} = {allData[selectedCountry][key]}</div>
-                  </div>);
-                })}
+                {Object.keys(allData[selectedCountry]).filter(key => key !== 'title').map((key) =>
+                  (<StatBox key={key} title={key} value={allData[selectedCountry][key]}/>))}
               </div>) : alert("Error loading data")
             }
         </div>)
