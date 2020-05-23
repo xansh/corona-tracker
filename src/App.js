@@ -44,7 +44,9 @@ class App extends React.Component {
           (<div>
             {success?
               (<div>
-                <h2>Countries</h2>
+                <h1>Countrywise Corona Tracker</h1>
+                <br/>
+                <h2>Select A Country</h2>
                 <br/>
                 <ReactFlagsSelect
                   searchable
@@ -52,8 +54,21 @@ class App extends React.Component {
                   countries={Object.keys(allData)}
                   defaultCountry={selectedCountry}
                 />
-                {Object.keys(allData[selectedCountry]).filter(key => key !== 'title').map((key) =>
-                  (<StatBox key={key} title={key} value={allData[selectedCountry][key]}/>))}
+                <br/>
+                  <StatBox
+                    title={'Total Cases'}
+                    value={allData[selectedCountry].total_cases}
+                    newValue={allData[selectedCountry].total_new_cases_today}/>
+                  <StatBox
+                    title={'Total Active Cases'}
+                    value={allData[selectedCountry].total_active_cases}/>
+                  <StatBox
+                    title={'Total Recovered'}
+                    value={allData[selectedCountry].total_recovered}/>
+                  <StatBox
+                    title={'Total Deaths'}
+                    value={allData[selectedCountry].total_deaths}
+                    newValue={allData[selectedCountry].total_new_deaths_today}/>
               </div>) : alert("Error loading data")
             }
         </div>)
