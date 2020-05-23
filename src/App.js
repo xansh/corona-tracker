@@ -3,6 +3,7 @@ import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
 import LineChart, {parseFlatArray} from 'react-linechart';
 import '../node_modules/react-linechart/dist/styles.css';
+import ReactLoading from 'react-loading';
 import './App.css';
 import StatBox from './StatBox';
 
@@ -50,7 +51,7 @@ class App extends React.Component {
        const chartData = parseFlatArray(responseData,
                                         'date',
                                         ['confirmed', 'active', 'deaths', 'recovered'],
-                                        ['black', 'blue', 'red', 'green'],
+                                        ['black', 'orange', 'red', 'green'],
                                         undefined,
                                         ['Total', 'Active', 'Deaths', 'Recovered']);
        console.log(chartData);
@@ -74,12 +75,12 @@ class App extends React.Component {
     return (
       <div className="App">
         {loading?
-          (<h1>Loading...</h1>) :
+          (<ReactLoading type={'spinningBubbles'} color={'black'} className="App-loading"/>) :
           (<div>
             {success?
               (<div>
+                <div className="App-header">Countrywise Corona Tracker</div>
                 <div>
-                  <h1>Countrywise Corona Tracker</h1>
                   <br/>
                   <h2>Select A Country</h2>
                   <br/>
@@ -111,9 +112,11 @@ class App extends React.Component {
                 </div>
                 <div>
                   {chartLoading ?
-                    <h1>Loading Chart...</h1> :
+                    (<ReactLoading type={'bars'} color={'black'} className="App-loading"/>) :
                     chartSuccess ?
                       <LineChart
+                        height={600}
+                        width={1200}
                         data={chartData}
                         xLabel='Date'
                         yLabel=''

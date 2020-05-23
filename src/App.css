@@ -1,10 +1,15 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(#ffffff,#33ccff);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +20,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-loading {
+  margin: auto;
 }
 
 .StatBox {
