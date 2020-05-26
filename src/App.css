@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: linear-gradient(#ffffff,#33ccff);
+  background-image: linear-gradient(white, lightblue);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -8,14 +8,20 @@
   left: 0
 }
 
+.DropDown {
+  border-style: outset;
+  width: auto;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-image: linear-gradient(lightblue, white);
   display: flex;
+  min-height: 10vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -43,7 +49,7 @@
 }
 
 .StatBox-data {
-  border: 2px outset;
+  border: 2px ridge;
   border-radius: 12px;
   padding: 10px;
 }

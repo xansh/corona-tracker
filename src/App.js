@@ -54,7 +54,6 @@ class App extends React.Component {
                                         ['black', 'orange', 'red', 'green'],
                                         undefined,
                                         ['Total', 'Active', 'Deaths', 'Recovered']);
-       console.log(chartData);
        this.setState({chartSuccess: true, chartData});
      })
      .catch((error) => {
@@ -82,13 +81,14 @@ class App extends React.Component {
                 <div className="App-header">Countrywise Corona Tracker</div>
                 <div>
                   <br/>
-                  <h2>Select A Country</h2>
-                  <br/>
                   <ReactFlagsSelect
                     searchable
                     onSelect={this.onSelectCountry}
                     countries={Object.keys(allData)}
                     defaultCountry={selectedCountry}
+                    selectedSize={18}
+                    optionsSize={14}
+                    className="DropDown"
                   />
                   <br/>
                   <StatBox
