@@ -1,11 +1,13 @@
 .App {
   text-align: center;
   background-image: linear-gradient(white, lightblue);
+  background-size: auto;
+  position: absolute;
+  overflow: auto;
   height: 100%;
   width: 100%;
-  position: absolute;
   top: 0;
-  left: 0
+  left: 0;
 }
 
 .DropDown {
@@ -15,6 +17,7 @@
 
 .App-header {
   background-image: linear-gradient(lightblue, white);
+  background-size: auto;
   display: flex;
   min-height: 10vh;
   flex-direction: column;
