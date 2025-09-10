@@ -13,7 +13,7 @@
     "react-flags-select": "^1.1.12",
     "react-linechart": "^1.1.12",
     "react-loading": "^2.0.3",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "typescript": "^3.9.2"
   },
   "scripts": {
